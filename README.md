@@ -27,4 +27,4 @@ For Windows, select "Precompiled Binaries for Windows" and use the 3rd option (S
 
 DB Browser - download at https://sqlitebrowser.org/dl/
 
-SQLizer - convert data files into a SQL script for importing into DB Browser. Some tweaks required. https://sqlizer.io/#/
+SQLizer - convert data files into an SQL script for importing into DB Browser. Some tweaks required. https://sqlizer.io/#/
