@@ -1,6 +1,6 @@
 # EWA-sql
 
-**Data and sources:**
+**Data and sources**
 
 *scorecard* - College data from the U.S. Dept. of Education. We'll be working with select fields on four-year colleges.
 https://collegescorecard.ed.gov/data/
@@ -19,4 +19,12 @@ https://apps2.dpi.wi.gov/reportcards/
 https://nces.ed.gov/ccd/pubagency.asp
 
 
+**Helpful links**
 
+SQLite - download at https://www.sqlite.org/download.html
+For Mac, select "Precompiled Binaries for Mac OS X (x86)"
+For Windows, select "Precompiled Binaries for Windows" and use the 3rd option (Starts with "A bundle of command-line tools...)
+
+DB Browser - download at https://sqlitebrowser.org/dl/
+
+SQLizer - convert data files into a SQL script for importing into DB Browser. Some tweaks required. https://sqlizer.io/#/
