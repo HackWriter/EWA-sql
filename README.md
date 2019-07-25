@@ -1,6 +1,6 @@
 # EWA-sql
 
-Data and sources:
+**Data and sources:**
 
 scorecard - College data from the U.S. Dept. of Education. We'll be working with select fields on four-year colleges.
 https://collegescorecard.ed.gov/data/
