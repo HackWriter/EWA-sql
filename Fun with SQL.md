@@ -33,14 +33,16 @@ SELECT instnm, city, stabbr, ugds
 FROM scorecard
 ORDER BY ugds DESC
 ```
-If we only the top 10 biggest schools, add LIMIT
 
+If we only the top 10 biggest schools, add LIMIT
 ```
 SELECT instnm, city, stabbr, ugds
 FROM scorecard
 ORDER BY ugds DESC
 LIMIT 10
 ```
+
+
 Add a condition - the WHERE clause. Let's get colleges from Wisconsin:
 
 ```
@@ -48,6 +50,8 @@ SELECT instnm, city, stabbr, ugds
 FROM scorecard
 WHERE stabbr = 'WI'
 ```
+
+
 How about two conditions? Here are Wisconsin colleges with at least 5,000 undergrads, ranked in descending order:
 
 ```
