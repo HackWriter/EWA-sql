@@ -70,3 +70,5 @@ WHERE (stabbr = 'WI' OR stabbr = 'IL') and ugds >= '5000'
 ORDER BY ugds DESC
 ```
 Parentheses make a difference! See what happens when you don't use them.
+
+![alt text](hhacker/test.png "Description goes here")
