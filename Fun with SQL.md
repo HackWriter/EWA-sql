@@ -48,3 +48,21 @@ SELECT instnm, city, stabbr, ugds
 FROM scorecard
 WHERE stabbr = 'WI'
 ```
+How about two conditions? Here are Wisconsin colleges with at least 5,000 undergrads, ranked in descending order:
+
+```
+SELECT instnm, city, stabbr, ugds
+FROM scorecard
+WHERE stabbr = 'WI' and ugds >= 5000
+ORDER BY ugds DESC
+```
+Note that we put single quotes around WI because it's text, but we don't use quotes with undergrads because it's a number.
+
+Now, what if we want these larger colleges from Wisconsin or Illinois?
+```
+SELECT instnm, city, stabbr, ugds
+FROM scorecard
+WHERE (stabbr = 'WI' OR stabbr = 'IL') and ugds >= '5000'
+ORDER BY ugds DESC
+```
+Parentheses make a difference! See what happens when you don't use them.
