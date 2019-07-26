@@ -71,4 +71,4 @@ ORDER BY ugds DESC
 ```
 Parentheses make a difference! See what happens when you don't use them.
 
-![alt text](hhacker/test.png "Description goes here")
+![alt text](test.png "Description goes here")
