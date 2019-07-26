@@ -71,3 +71,15 @@ ORDER BY ugds DESC
 ```
 Parentheses make a difference! See what happens when you don't use them.
 
+What if you want only colleges with between 5,000 and 10,000 students? You can get the answer this way
+```
+SELECT instnm, city, stabbr, ugds
+FROM scorecard
+WHERE ugds >=5000 AND ugds <=10000
+
+```
+or change the last line to 
+```
+
+WHERE ugds BETWEEN 5000 AND 10000
+```
