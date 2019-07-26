@@ -33,6 +33,8 @@ Sqlify - another option. https://sqlify.io/convert
 SQLite help:
 
 A Gentle Introduction to SQL Using SQLite, https://a-gentle-introduction-to-sql.readthedocs.io/en/latest/
+
 Tech on the Net, https://www.techonthenet.com/sqlite/index.php
+
 SQLite Tutorial, http://www.sqlitetutorial.net/
   
