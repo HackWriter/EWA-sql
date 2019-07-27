@@ -2,7 +2,7 @@
 
 We'll use the College Scorecard table, *scorecard*.
 
-For most of our queries, we'll be working off this basic syntax:
+Our queries will build off this basic syntax:
 
 SELECT column1, column2, etc.
 FROM table
