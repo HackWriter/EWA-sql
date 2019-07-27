@@ -64,6 +64,7 @@ FROM scorecard
 WHERE stabbr = 'WI' and ugds >= 5000
 ORDER BY ugds DESC
 ```
+![alt text](ss2.png)
 Note that we put single quotes around WI because it's text, but we don't use quotes with undergrads because it's a number.
 
 Now, what if we want these larger colleges from Wisconsin or Illinois?
@@ -111,13 +112,14 @@ FROM scorecard
 WHERE stabbr = 'FL'
 GROUP BY control
 ```
+![alt text](ss2.png)
 The 17 for-profit schools have the highest average debt, at $27,558. 
 But let's double-check the raw data. Seven of the 79 Florida colleges have no debt data. Let's exclude them from the count.
 
 ```
 SELECT control, AVG(grad_debt), COUNT(*)
 FROM scorecard
-WHERE stabbr = 'FL' AND grad_debt 
+WHERE stabbr = 'FL' AND grad_debt IS NOT NULL
 GROUP BY control
 ```
 There 16 for-profit schools with debt data. Note that the average debt ($27,558) is still the same - SQL ignores NULL values when calculating the average.
