@@ -150,3 +150,14 @@ GROUP BY control
 Our results show that students at for-profit colleges are most likely to be low-income. They have the lowest completion rates. Those who do graduate have the highest average debt.
 
 ![alt text](ss5.png)
+
+*Uh, these decimals are pretty out of control. Can we get rid of some?*
+Sure. We can use the ROUND function. The basic syntax is
+ROUND(*value, decimal places*)
+
+```
+SELECT control, SUM(ugds), ROUND(AVG(grad_debt),1), ROUND(AVG(pctpell),3), ROUND(AVG(compltn),3)
+FROM scorecard
+WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
+GROUP BY control
+```
