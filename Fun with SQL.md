@@ -105,7 +105,7 @@ GROUP BY control
 ```
 Let's also count how many schools are in each group.
 ```
-SELECT control, AVG(grad_debt), count(*)
+SELECT control, AVG(grad_debt), COUNT(*)
 FROM scorecard
 WHERE stabbr = 'FL'
 GROUP BY control
@@ -114,11 +114,25 @@ The 17 for-profit schools have the highest average debt, at $27,558.
 But let's double-check the raw data. Seven of the 79 Florida colleges have no debt data. Let's exclude them from the count.
 
 ```
-SELECT control, AVG(grad_debt), count(*)
+SELECT control, AVG(grad_debt), COUNT(*)
 FROM scorecard
 WHERE stabbr = 'FL' AND grad_debt 
 GROUP BY control
 ```
-There 16 for-profit schools really, and one with no data. Note that the average debt ($27,558) is still the same - SQL ignores NULL values when calculating the average.
+There 16 for-profit schools with debt data. Note that the average debt ($27,558) is still the same - SQL ignores NULL values when calculating the average.
 
+We can also see the greatest and smallest debt amounts by college type.
+```
+SELECT control, MIN(grad_debt), MAX(grad_debt), count(*)
+FROM scorecard
+WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
+GROUP BY control
+```
+Let's clean up our field names. You can display new ones with AS.
+```
+SELECT control, MIN(grad_debt) AS minimum, MAX(grad_debt) AS maximum, count(*)
+FROM scorecard
+WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
+GROUP BY control
+```
 
