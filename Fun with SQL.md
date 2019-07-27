@@ -7,6 +7,7 @@ Our queries will build off this basic syntax:
 SELECT column1, column2, etc.
 FROM table
 
+*Style note: You don't have to capitalize SELECT, FROM, etc. but it's good practice.
 
 Select everything in a table:
 ```
@@ -137,7 +138,7 @@ GROUP BY control
 ```
 What else might we want to know in relation to debt? How about the percent of students on Pell grants - those with lower family incomes -- and the percent who graduate in 6 years. Let's also see the total number of students in each group.
 ```
-SELECT control, SUM(ugds), avg(grad_debt), avg(pctpell), avg(compltn)
+SELECT control, SUM(ugds), AVG(grad_debt), AVG(pctpell), AVG(compltn)
 FROM scorecard
 WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
 GROUP BY control
