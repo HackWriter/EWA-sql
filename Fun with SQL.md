@@ -67,7 +67,6 @@ WHERE stabbr = 'WI' and ugds >= 5000
 ORDER BY ugds DESC
 ```
 ![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ss2.png)
-![alt_text](/HackWriter-patch-1/ss2.png)
 
 Note that we put single quotes around WI because it's text, but we don't use quotes with undergrads because it's a number.
 
@@ -117,7 +116,7 @@ WHERE stabbr = 'FL'
 GROUP BY control
 ```
 
-![alt_text](/HackWriter-patch-1/ss4.png)
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ss4.png)
 
 The 17 for-profit schools have the highest average debt, at $27,558. 
 But let's double-check the raw data. Seven of the 79 Florida colleges have no debt data. Let's exclude them from the count.
@@ -153,7 +152,8 @@ GROUP BY control
 ```
 Our results show that students at for-profit colleges are most likely to be low-income. They have the lowest completion rates. Those who do graduate have the highest average debt.
 
-![alt text](ss5.png)
+
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ss5.png)
 
 *Uh, these decimals are pretty out of control. Can we get rid of some?*
 
@@ -166,7 +166,9 @@ FROM scorecard
 WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
 GROUP BY control
 ```
-![alt text](ss6.png)
+
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ss6.png)
+
 
 *What about the crazy field names? Can we rename them?*
 
@@ -178,4 +180,5 @@ FROM scorecard
 WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
 GROUP BY control
 ```
-![alt text](ss7.png)
+
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ss7.png)
