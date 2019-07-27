@@ -7,7 +7,7 @@ Our queries will build off this basic syntax:
 SELECT column1, column2, etc.
 FROM table
 
-*Style note: You don't have to capitalize SELECT, FROM, etc. but it's good practice.
+*Style note: You don't have to capitalize SELECT, FROM, etc. but it's good practice.*
 
 Select everything in a table:
 ```
