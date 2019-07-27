@@ -1,3 +1,7 @@
+## Getting started - SELECT, ORDER and WHERE
+
+We'll use the College Scorecard table, *scorecard*.
+
 For most of our queries, we'll be working off this basic syntax:
 
 SELECT column1, column2, etc.
@@ -16,7 +20,6 @@ Select certain fields:
 SELECT instnm, city, stabbr, ugds
 FROM scorecard
 ```
-
 
 
 Say we want the same information as above, but ordered by number of undergrads:
@@ -76,10 +79,46 @@ What if you want only colleges with between 5,000 and 10,000 students? You can g
 SELECT instnm, city, stabbr, ugds
 FROM scorecard
 WHERE ugds >=5000 AND ugds <=10000
-
 ```
 or change the last line to 
 ```
-
 WHERE ugds BETWEEN 5000 AND 10000
 ```
+
+## Grouping, averaging, counting and more
+
+Which colleges have the highest levels of student debt? Let's look at Florida.
+
+```
+SELECT instnm, city, control, grad_debt
+FROM scorecard
+WHERE stabbr = 'FL'
+ORDER BY grad_debt DESC
+```
+We know from the data dictionary that for control, 1 = public, 2 = private and 3 = for-profit. What is the average debt by school type? For that, we need the AVG (average) and GROUP BY statements.
+
+```
+SELECT control, AVG(grad_debt)
+FROM scorecard
+WHERE stabbr = 'FL'
+GROUP BY control
+```
+Let's also count how many schools are in each group.
+```
+SELECT control, AVG(grad_debt), count(*)
+FROM scorecard
+WHERE stabbr = 'FL'
+GROUP BY control
+```
+The 17 for-profit schools have the highest average debt, at $27,558. 
+But let's double-check the raw data. Seven of the 79 Florida colleges have no debt data. Let's exclude them from the count.
+
+```
+SELECT control, AVG(grad_debt), count(*)
+FROM scorecard
+WHERE stabbr = 'FL' AND grad_debt 
+GROUP BY control
+```
+There 16 for-profit schools really, and one with no data. Note that the average debt ($27,558) is still the same - SQL ignores NULL values when calculating the average.
+
+
