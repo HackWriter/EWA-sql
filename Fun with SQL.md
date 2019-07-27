@@ -67,7 +67,7 @@ WHERE stabbr = 'WI' and ugds >= 5000
 ORDER BY ugds DESC
 ```
 ![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ss2.png)
-![alt_text](/blob/HackWriter-patch-1/ss2.png)
+![alt_text](/HackWriter-patch-1/ss2.png)
 
 Note that we put single quotes around WI because it's text, but we don't use quotes with undergrads because it's a number.
 
@@ -116,7 +116,8 @@ FROM scorecard
 WHERE stabbr = 'FL'
 GROUP BY control
 ```
-![alt text](ss4.png)
+
+![alt_text](/HackWriter-patch-1/ss4.png)
 
 The 17 for-profit schools have the highest average debt, at $27,558. 
 But let's double-check the raw data. Seven of the 79 Florida colleges have no debt data. Let's exclude them from the count.
