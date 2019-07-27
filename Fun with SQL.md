@@ -135,4 +135,11 @@ FROM scorecard
 WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
 GROUP BY control
 ```
-
+What else might we want to know in relation to debt? How about the percent of students on Pell grants - those with lower family incomes -- and the percent who graduate in 6 years. Let's also see the total number of students in each group.
+```
+SELECT control, SUM(ugds), avg(grad_debt), avg(pctpell), avg(compltn)
+FROM scorecard
+WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
+GROUP BY control
+```
+Our results show that students at for-profit colleges are most likely to be low-income. They have the lowest completion rates. Those who do graduate have the highest average debt.
