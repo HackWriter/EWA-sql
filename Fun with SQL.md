@@ -63,7 +63,7 @@ How about two conditions? Here are Wisconsin colleges with at least 5,000 underg
 ```
 SELECT instnm, city, stabbr, ugds
 FROM scorecard
-WHERE stabbr = 'WI' and ugds >= 5000
+WHERE stabbr = 'WI' AND ugds >= 5000
 ORDER BY ugds DESC
 ```
 ![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ss2.png)
@@ -74,7 +74,7 @@ Now, what if we want these larger colleges from Wisconsin or Illinois?
 ```
 SELECT instnm, city, stabbr, ugds
 FROM scorecard
-WHERE (stabbr = 'WI' OR stabbr = 'IL') and ugds >= '5000'
+WHERE (stabbr = 'WI' OR stabbr = 'IL') AND ugds >= '5000'
 ORDER BY ugds DESC
 ```
 Parentheses make a difference! See what happens when you don't use them.
@@ -133,21 +133,21 @@ We can also see the greatest and smallest debt amounts by college type.
 ```
 SELECT control, MIN(grad_debt), MAX(grad_debt), count(*)
 FROM scorecard
-WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
+WHERE stabbr = 'FL' AND grad_debt IS NOT NULL
 GROUP BY control
 ```
 Let's clean up our field names. You can display new ones with AS.
 ```
 SELECT control, MIN(grad_debt) AS minimum, MAX(grad_debt) AS maximum, count(*)
 FROM scorecard
-WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
+WHERE stabbr = 'FL' AND grad_debt IS NOT NULL
 GROUP BY control
 ```
 What else might we want to know in relation to debt? How about the percent of students on Pell grants - those with lower family incomes -- and the percent who graduate in 6 years. Let's also see the total number of students in each group.
 ```
 SELECT control, SUM(ugds), AVG(grad_debt), AVG(pctpell), AVG(compltn)
 FROM scorecard
-WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
+WHERE stabbr = 'FL' AND grad_debt IS NOT NULL
 GROUP BY control
 ```
 Our results show that students at for-profit colleges are most likely to be low-income. They have the lowest completion rates. Those who do graduate have the highest average debt.
@@ -163,7 +163,7 @@ ROUND(*value, decimal places*)
 ```
 SELECT control, SUM(ugds), ROUND(AVG(grad_debt),1), ROUND(AVG(pctpell),3), ROUND(AVG(compltn),3)
 FROM scorecard
-WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
+WHERE stabbr = 'FL' AND grad_debt IS NOT NULL
 GROUP BY control
 ```
 
