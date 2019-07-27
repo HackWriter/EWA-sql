@@ -148,3 +148,5 @@ WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
 GROUP BY control
 ```
 Our results show that students at for-profit colleges are most likely to be low-income. They have the lowest completion rates. Those who do graduate have the highest average debt.
+
+![alt text](ss5.png)
