@@ -37,7 +37,7 @@ SELECT instnm, city, stabbr, ugds
 FROM scorecard
 ORDER BY ugds DESC
 ```
-
+![alt text](ss1.png)
 If we only the top 10 biggest schools, add LIMIT
 ```
 SELECT instnm, city, stabbr, ugds
