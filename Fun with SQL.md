@@ -152,6 +152,7 @@ Our results show that students at for-profit colleges are most likely to be low-
 ![alt text](ss5.png)
 
 *Uh, these decimals are pretty out of control. Can we get rid of some?*
+
 Sure. We can use the ROUND function. The basic syntax is
 ROUND(*value, decimal places*)
 
@@ -161,3 +162,16 @@ FROM scorecard
 WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
 GROUP BY control
 ```
+![alt text](ss6.png)
+
+*What about the crazy field names? Can we rename them?*
+
+Sure, with the AS function. 
+
+```
+SELECT control, SUM(ugds) AS students, ROUND(AVG(grad_debt),1) AS avg_debt, ROUND(AVG(pctpell),3) AS avg_pell, ROUND(AVG(compltn),3) AS avg_completion
+FROM scorecard
+WHERE stabbr = 'FL'  AND grad_debt IS NOT NULL
+GROUP BY control
+```
+![alt text](ss7.png)
