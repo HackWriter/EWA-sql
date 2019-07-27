@@ -37,7 +37,9 @@ SELECT instnm, city, stabbr, ugds
 FROM scorecard
 ORDER BY ugds DESC
 ```
-![alt text](ss1.png)
+
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ss1.png)
+
 If we only the top 10 biggest schools, add LIMIT
 ```
 SELECT instnm, city, stabbr, ugds
@@ -64,7 +66,8 @@ FROM scorecard
 WHERE stabbr = 'WI' and ugds >= 5000
 ORDER BY ugds DESC
 ```
-![alt text](ss2.png)
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ss2.png)
+![alt_text](/blob/HackWriter-patch-1/ss2.png)
 
 Note that we put single quotes around WI because it's text, but we don't use quotes with undergrads because it's a number.
 
