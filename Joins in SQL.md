@@ -150,3 +150,9 @@ UPDATE txschools
 SET schtype = 'Blended'
 WHERE type = 'B'
 ```
+Your updated new column is at the far right.
+
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts11.png)
+
+Quirky SQL stuff: Note that you ALTER TABLE *tablename* but you don't UPDATE TABLE *tablename,* you just UPDATE *tablename.*
+
