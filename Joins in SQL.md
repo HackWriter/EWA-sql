@@ -49,6 +49,31 @@ Check out the results. SQL knew where to put the salary info because we joined t
 
 ![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts4.png)
 
+From there, we can add extra fields, conditions, etc. For instance, let's say we want to see the share of low-income students, average teacher salary and average years of teacher experience for all elementary schools. Then order by years of experience.
+
+```
+SELECT txschools.distname, txschools.campus, txschools.campname, txschools.type, txschools.low_inc, txstaff.tchr_sal, txstaff.avg_yrs_exp
+FROM txschools
+JOIN txstaff ON txschools.campus = txstaff.campus
+WHERE txschools.type = 'E'
+ORDER BY txstaff.avg_yrs_exp
+```
+[ts5]
+
+Tip: To save on typing, remember we can type "ORDER BY 7" instead of "ORDER BY txstaff.avg_yrs_exp" because it's the 7th item in our SELECT query.
+
+Maybe we want to see the average years of experience and salary for charter elementary schools versus traditional public ones.
+```
+SELECT txschools.charter, AVG(txstaff.tchr_sal), AVG(txstaff.avg_yrs_exp)
+FROM txschools
+JOIN txstaff ON txschools.campus = txstaff.campus
+WHERE txschools.type = 'E'
+GROUP BY txschools.charter
+```
+Here's what we get - charter schools have less-experienced, lower-paid teachers on average.
+
+[ts6]
+
 
 
 
