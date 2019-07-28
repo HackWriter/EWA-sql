@@ -70,10 +70,52 @@ JOIN txstaff ON txschools.campus = txstaff.campus
 WHERE txschools.type = 'E'
 GROUP BY txschools.charter
 ```
-Here's what we get - charter schools have less-experienced, lower-paid teachers on average.
+Here's what we get - charter elementary schools have less-experienced, lower-paid teachers on average.
 
 ![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts6.png)
 
+Does that pattern hold across all school levels? And how many schools in each group are we talking about? To see that, let's do
+```
+SELECT txschools.charter, txschools.type, AVG(txstaff.tchr_sal), AVG(txstaff.avg_yrs_exp), COUNT(*)
+FROM txschools
+JOIN txstaff ON txschools.campus = txstaff.campus
+GROUP BY 1, 2
+ORDER BY 2
+```
+The answer is yes, the pattern holds.
 
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts7.png)
 
+##Prettify our results
 
+Remember we can rename our fields something simpler.
+```
+SELECT txschools.charter, txschools.type, AVG(txstaff.tchr_sal) AS avg_salary, AVG(txstaff.avg_yrs_exp) AS avg_exper, COUNT(*) AS school_count
+FROM txschools
+JOIN txstaff ON txschools.campus = txstaff.campus
+GROUP BY 1, 2
+ORDER BY 2
+```
+And what about those crazy decimals? For that we can use the ROUND statement. The general syntax is ROUND(fieldname, X) where X is the number of decimal places. Try it with average years of experience:
+```
+SELECT txschools.charter, txschools.type, ROUND(AVG(txstaff.avg_yrs_exp),1)
+FROM txschools
+JOIN txstaff ON txschools.campus = txstaff.campus
+GROUP BY 1, 2
+ORDER BY 2
+```
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts8.png)
+
+Next we can get really crazy and also rename that monster field we created.
+```
+SELECT txschools.charter, txschools.type, ROUND(AVG(txstaff.avg_yrs_exp),1) AS avg_tchr_exper
+FROM txschools
+JOIN txstaff ON txschools.campus = txstaff.campus
+GROUP BY 1, 2
+ORDER BY 2
+```
+Which produces a much-less menacing table:
+
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts9.png)
+
+```
