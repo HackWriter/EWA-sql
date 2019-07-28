@@ -8,18 +8,18 @@ Each school has a nine-digit code, campus. This is what we call a "unique identi
 
 (You'll also notice that each school district has a six-digit code, but because there are multiple schools per district, it's not unique.)
 
-[IMAGE TS1]
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts1.png)
 
 Now look at the *txstaff* table, which has data on teacher experience and average teacher and administrator salaries. The school names aren't included, but we do have the campus field, with those 9-digit schools codes.
 
-[image ts2]
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts2.png)
 
 First, let's do a simple query with our first table, *txschools*. 
 ```
 SELECT distname, campus, campname, type
 FROM txschools
 ```
-[image ts3]
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts3.png)
 
 Type is the school level - E for elementary, M for middle, S for secondary/high and B is blended grades.
 
@@ -47,7 +47,7 @@ JOIN txstaff ON txschools.campus = txstaff.campus
 ```
 Check out the results. SQL knew where to put the salary info because we joined the two tables on the unique identifier, the campus field.
 
-[image ts4]
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts4.png)
 
 
 
