@@ -86,7 +86,7 @@ The answer is yes, the pattern holds.
 
 ![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts7.png)
 
-##Prettify our results
+## Prettify our results
 
 Remember we can rename our fields something simpler.
 ```
@@ -104,7 +104,7 @@ JOIN txstaff ON txschools.campus = txstaff.campus
 GROUP BY 1, 2
 ORDER BY 2
 ```
-![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts8.png)
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts9.png)
 
 Next we can get really crazy and also rename that monster field we created.
 ```
@@ -116,6 +116,6 @@ ORDER BY 2
 ```
 Which produces a much-less menacing table:
 
-![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts9.png)
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts10.png)
 
 ```
