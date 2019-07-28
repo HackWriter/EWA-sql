@@ -58,7 +58,7 @@ JOIN txstaff ON txschools.campus = txstaff.campus
 WHERE txschools.type = 'E'
 ORDER BY txstaff.avg_yrs_exp
 ```
-[ts5]
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts5.png)
 
 Tip: To save on typing, remember we can type "ORDER BY 7" instead of "ORDER BY txstaff.avg_yrs_exp" because it's the 7th item in our SELECT query.
 
@@ -72,7 +72,7 @@ GROUP BY txschools.charter
 ```
 Here's what we get - charter schools have less-experienced, lower-paid teachers on average.
 
-[ts6]
+![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts6.png)
 
 
 
