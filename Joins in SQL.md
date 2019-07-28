@@ -156,3 +156,8 @@ Your updated new column is at the far right.
 
 Quirky SQL stuff: Note that you ALTER TABLE *tablename* but you don't UPDATE TABLE *tablename,* you just UPDATE *tablename.*
 
+We can also use ALTER TABLE to rename columns. For instance:
+```
+ALTER TABLE txschools
+RENAME COLUMN schtype TO school_type
+```
