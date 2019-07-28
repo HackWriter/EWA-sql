@@ -119,3 +119,12 @@ Which produces a much-less menacing table:
 ![alt_text](https://github.com/HackWriter/EWA-sql/blob/HackWriter-patch-1/ts10.png)
 
 ```
+## Adding and updating columns
+
+Sometimes we want to add a column to our table. Let's say we want to show Elementary, Middle etc. instead of E, M, etc.
+You could just update the existing *type* field, but it's often better to keep your original column and add a new one.
+```
+ALTER TABLE txschools
+ADD COLUMN schtype VARCHAR(10)
+```
+We tell SQL we're going to change, or alter, the existing table *txschools.* We want to ADD a COLUMN called *schtype*, and it will be a text (instead of number) column of **var**ying **char**acter length, up to 10 long.
